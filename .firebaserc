@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "ujuzi-cffd9",
+    "staging": "ujuzi-cffd9"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
