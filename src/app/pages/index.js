@@ -2,7 +2,7 @@
 import { HomeIcon, ClipboardCheckIcon, UserGroupIcon, AcademicCapIcon } from '@heroicons/react/solid'
 import Sidebar from '../components/sidebar';
 
-export default function HomeContent() {
+export default function index() {
   return (
     <div className="flex">
       {/* Sidebar */}

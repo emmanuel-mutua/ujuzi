@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Login from "./login/login";
 import SignUp from "./signup/SignUp";
-import HomeContent from "./Home/home";
-import Teachers from "./teachers/Teacher";
+import Index from "./pages/index"
+import Teachers from "./pages/teachers";
 
 export default function Home() {
   return (
     <div>
-       {/* <HomeContent/> */}
+       <Index />
      {/* <Login /> */}
      {/* <SignUp /> */}
-     <Teachers />
+     {/* <Teachers /> */}
     </div>
   );
 }
