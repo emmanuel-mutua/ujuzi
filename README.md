@@ -13,11 +13,10 @@ pnpm dev
 # or
 bun dev
 #installation
-npm install firebase
-npm install next@latest react@latest react-dom@latest
-npm install -g firebase-tools@latest
-firebase login
-firebase init
+npm install @heroicons/react
+npm install @heroicons/react@v1
+
+npm install axios
 
 # firebase installation problem
 
