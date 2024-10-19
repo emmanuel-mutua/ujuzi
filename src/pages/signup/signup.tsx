@@ -2,31 +2,39 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import '../global.css'
 
-const Login = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
+  const [kicdNumber, setkicdNumber] = useState("");
+
   const [password, setPassword] = useState("");
+  const [cpassword, setCPassword] = useState("");
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setEmail(e.target.value);
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleKicdNumberChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setkicdNumber(e.target.value);
+
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) =>
     setPassword(e.target.value);
 
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCPassword(e.target.value);
+  
 
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
     try {
-      if (email === "test@example.com" && password === "1234") {
-        console.log("Login successful!");
-      } else {
-        setErrorMessage("Invalid email or Password");
-      }
+
+    
     } catch (error) {
-      setErrorMessage("An error occurred during login.");
+      setErrorMessage("An error occurred during signup.");
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleRegistration = async () => {
     try {
       //handle login
     } catch (error) {
@@ -45,21 +53,18 @@ const Login = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-700 to-transparent bg-opacity-70 backdrop-blur-sm"></div>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-8 z-20">
           <h1 className="text-5xl font-bold mb-4">Welcome to Ujuzi</h1>
-          <p className="text-lg text-center">
-            Login now and gain immediate access to exclusive content and expert trainers
-          </p>
         </div>
       </div>
 
       <div className="w-full lg:w-1/2 flex items-center justify-center">
         <div className="bg-white p-10 shadow-lg rounded-lg w-full max-w-md">
-          <h2 className="text-2xl font-bold mb-6 text-center text-black">LOGIN</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center text-black">SIGNUP</h2>
           {errorMessage && (
             <div className="text-red-500 mb-4">{errorMessage}</div>
           )}
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-              Email Address
+            <label htmlFor="email" className="block text-gray-700 font-bold mb-2" aria-placeholder="Enter Email">
+                Email
             </label>
             <input
               type="email"
@@ -70,44 +75,58 @@ const Login = () => {
             />
           </div>
           <div className="mb-4">
+            <label htmlFor="kicdNumber" className="block text-gray-700 font-bold mb-2">
+              KICD Number
+            </label>
+            <input
+              type="text"
+              id="kicdNumber"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={kicdNumber}
+              onChange={handleKicdNumberChange}
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
               Password
             </label>
             <input
-              type="text"
+              type="password"
               id="password"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={handlePassword}
             />
           </div>
-         
-          <div className="flex items-center justify-center">
-            <button
-              onClick={handleLogin}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded justify-center focus:outline-none focus:shadow-outline"
-            >
-                Login
-            </button>
-            
+          <div className="mb-4">
+            <label htmlFor="cpassword" className="block text-gray-700 font-bold mb-2">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="cpassword"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={cpassword}
+              onChange={handleConfirmPasswordChange}
+            />
           </div>
-          <br/>
           <div className="flex items-center justify-center">
-          <p className="text-black">Don't have an account?</p>
-          <Link
-              href="/register"
-              className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+            <Link
+              href= "/login/login"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-4 rounded focus:outline-none focus:shadow-outline"
             >
-              SignUp
+              SIGUP
             </Link>
-           </div>
-<p className="text-black text-center">Or</p>
-          <div className="mt-1 text-center">
+          </div><br />
+          
+          <h4 className="text-gray-700 text-center">Or</h4>
+          <div className="mt-6 text-center">
+            
             <button
-              onClick={handleGoogleLogin}
+              onClick={handleGoogleRegistration}
               className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 rounded inline-flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4"
             >
-              <img src="images/google.png" alt="Google" className="w-5 h-5 mr-2" />
+              <img src="images/google.png" alt="Google" className="w-5 h-5 mr-4" />
               Google
             </button>
           </div>
@@ -117,4 +136,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

@@ -1,16 +1,12 @@
 import Image from "next/image";
-import Login from "./login/login";
-import SignUp from "./signup/SignUp";
-import Index from "./pages/index"
-import Teachers from "./pages/teachers";
+import './globals.css';
+import Index from "../pages/home/home"
+import Teachers from "../pages/teacher/teachers";
 
 export default function Home() {
   return (
     <div>
        <Index />
-     {/* <Login /> */}
-     {/* <SignUp /> */}
-     {/* <Teachers /> */}
     </div>
   );
 }

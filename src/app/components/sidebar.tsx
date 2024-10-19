@@ -13,7 +13,7 @@ export default function Sidebar() {
           <Link href="/" className="font-semibold text-yellow-500">Home</Link>
         </li>
         <li>
-          <Link href="/teachers">Teachers</Link>
+          <Link href="/teacher/teachers">Teachers</Link>
         </li>
         <li>
           <Link href="/assessment">Assessment</Link>
